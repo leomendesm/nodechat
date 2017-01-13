@@ -1,4 +1,4 @@
-let socket = io('http://localhost:3001');
+let socket = io('http://192.241.189.200:3001/');
 let room = localStorage.getItem("room");
 		socket.on(room, function (data) {
 			var chat = document.getElementById('chat');
