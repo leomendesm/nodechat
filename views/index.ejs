@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+	<title>Parallax Template - Materialize</title>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<link href="stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" /> </head>
+
+<body>
+	<header>
+		<div class="navbar-fixed">
+			<nav class="white" role="navigation">
+				<div class="nav-wrapper container"> <a id="logo-container" href="#" class="brand-logo">Logo</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#">Navbar Link</a></li>
+					</ul>
+					<ul id="nav-mobile" class="side-nav">
+						<li><a href="#">Navbar Link</a></li>
+					</ul> <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> </div>
+			</nav>
+		</div>
+	</header>
+	<main>
+	  <ul id="slide-out" class="side-nav fixed">
+    <li><div class="userView">
+      <div class="background">
+        <img src="images/sana.jpeg">
+      </div>
+      <a href="#!user"><img class="circle" src="images/chae.gif"></a>
+      <a href="#"><span class="white-text name name2"> <%= nome %> </span></a>
+      <a href="#!email"><span class="white-text email"> Sala : <%= room %> </span></a>
+    </div>
+    </li>
+    <li class="li-margin">
+        <div class="row border active">
+        	<div class="col s2">
+        		<img src="images/chae.gif" alt="" class="circle responsive-img marg">
+        	</div>
+        	<div class="col s10">
+        		<p>Chaeyeon<br>eoq</p>
+        	</div>
+		</div>
+		<div class="row border secondary">	   
+	        	<div class="col s2">
+	        		<img src="images/chae.gif" alt="" class="circle responsive-img marg">
+	        	</div>
+	        	<div class="col s10">
+	        		<p>Chaeyeon<br>eoq</p>
+	        	</div>
+	    </div>
+	    <div class="row border secondary">
+	        	<div class="col s2">
+	        		<img src="images/chae.gif" alt="" class="circle responsive-img marg">
+	        	</div>
+	        	<div class="col s10">
+	        		<p>Chaeyeon<br>eoq</p>
+	        	</div>
+        </div>
+    </li>
+  </ul>
+		<div class="container">
+			 <div class="row">
+    			<section>
+				   <div id="chat"></div>
+				   
+				 </section>
+			</div>
+		</div>
+	</main>
+	<footer class="page-footer white">
+		<div class="row">
+			<div class="col s10"><input type="text" id="msg" placeholder="Sua mensagem"></div>
+			<div class="col s2"><button class="btn waves-effect waves-light" onclick="enviar()" id="submit">Enviar
+    <i class="material-icons right">send</i>
+  </button></div>
+				   </div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/init.js"></script>
+	<script type="text/javascript">
+		localStorage.setItem("id", '<%= id %>' );
+		localStorage.setItem("room", '<%= room %>' );  
+	</script>
+	<script src="js/app.js"></script>
+</body>
+</html>
