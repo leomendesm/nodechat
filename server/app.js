@@ -16,7 +16,7 @@ const express = require('express'),
 	store = new expressSession.MemoryStore();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect('mongodb://test:test@ds159662.mlab.com:59662/nodechat');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -104,7 +104,6 @@ io.sockets.on('connection', function (client) {
     		text : text,
     		id: id
     	}
-    	console.log(msg.room);
     	all.push(data);
     	client.emit(msg.room, data);
     	client.broadcast.emit(msg.room, data);
@@ -140,7 +139,7 @@ app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
- server.listen(3001, function(){
+ server.listen(process.env.PORT, function(){
    console.log("Rodando o server!");
  });
 module.exports = app;
