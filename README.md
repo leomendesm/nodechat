@@ -1,5 +1,5 @@
 # NodeChat
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9a66b5f89ae3ee0c1b8c/maintainability)](https://codeclimate.com/github/leomendesm/nodechat/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/9a66b5f89ae3ee0c1b8c/test_coverage)](https://codeclimate.com/github/leomendesm/nodechat/test_coverage)
 
 Simple Chat built on top of Node.JS and MongoDB
 
