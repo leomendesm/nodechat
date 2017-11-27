@@ -43,7 +43,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 * **Leonardo Miraglia** - *Initial work* - [leomendesm](https://github.com/leomendesm)
 
-See also the list of [contributors](https://github.com/leomendesm/nodetorrent/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/leomendesm/nodechat/graphs/contributors) who participated in this project.
 
 ## License
 
