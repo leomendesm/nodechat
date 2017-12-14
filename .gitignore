@@ -1,11 +1,22 @@
 # https://git-scm.com/docs/gitignore
 # https://help.github.com/articles/ignoring-files
 # Example .gitignore files: https://github.com/github/gitignore
-/bower_components/
-/node_modules/
-/public/libs/angular/
-/public/libs/angular-route/
-/public/libs/animate.css/
-/public/libs/bootstrap/
-/public/libs/font-awesome/
-/public/libs/jquery/
+server/node_modules/
+server/libs/
+chat-plataform/node_modules/
+# testing
+chat-plataform/coverage
+
+# production
+chat-plataform/build
+
+# misc
+chat-plataform/.DS_Store
+chat-plataform/.env.local
+chat-plataform/.env.development.local
+chat-plataform/.env.test.local
+chat-plataform/.env.production.local
+
+chat-plataform/npm-debug.log*
+chat-plataform/yarn-debug.log*
+chat-plataform/yarn-error.log*

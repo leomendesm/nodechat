@@ -1,4 +1,5 @@
-const express = require('express'),
+const 
+	express = require('express'),
 	path = require('path'),
 	favicon = require('serve-favicon'),
 	logger = require('morgan'),
@@ -7,16 +8,12 @@ const express = require('express'),
 	bodyParser = require('body-parser'),
 	index = require('./routes/index'),
 	app = express(),
-	mongoose = require('mongoose'),
 	KEY = 'secret',
 	secret = 'secret',
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server),
 	cookie = cookieParser(secret),
 	store = new expressSession.MemoryStore();
-
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://test:test@ds159662.mlab.com:59662/nodechat');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -54,7 +51,7 @@ app.post("/", function(req, res){
 		}
 	}
 	if (flag) {
-		req.session.nome = req.body.user;
+		req.session.user = req.body.user;
 		req.session.id = new Date();
 		rooms.push(req.body.room);
 		pass.push(req.body.pass);
@@ -63,7 +60,7 @@ app.post("/", function(req, res){
 		res.redirect('/');
 	}else{
 		if (req.body.pass == pass[position]) {
-			req.session.nome = req.body.user;
+			req.session.user = req.body.user;
 			req.session.id = new Date();
 			req.session.room = req.body.room;
 			room = req.body.room;
@@ -75,9 +72,9 @@ app.post("/", function(req, res){
 });
 app.get("/", function(req, res){
 	// Armazenando o nome na sessão.
-   	if (req.session.nome != null) {
+   	if (req.session.user != null) {
    		let data = {
-   			nome : req.session.nome,
+   			user : req.session.user,
    			id : req.session.id,
    			room : req.session.room
    		}
@@ -97,7 +94,7 @@ io.sockets.on('connection', function (client) {
     //client.broadcast.emit('toClient', all);
    	client.on('toServer', function (msg) {
     	let text = msg.text;
-    	let name = session.nome;
+    	let name = session.user;
     	let id = msg.id;
     	let data = {
     		name : name,
@@ -139,7 +136,7 @@ app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
- server.listen(process.env.PORT, function(){
-   console.log("Rodando o server!");
+ server.listen(3001, function(){
+   console.log(`Running server at localhost:3000 and socket on localhost:3001`);
  });
 module.exports = app;
